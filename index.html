@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sin Vueltas - Pollo al Spiedo y Minutas</title>
+    <meta name="description"
+        content="El mejor pollo al spiedo, hamburguesas, pizzas y empanadas en Godoy Cruz. Comida casera, sin vueltas.">
+
+    <!-- Favicon & Icons -->
+    <link rel="icon" type="image/jpeg" href="images/logo.jpg">
+    <link rel="apple-touch-icon" href="images/logo.jpg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://sinvueltas.vercel.app/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sinvueltas.vercel.app/">
+    <meta property="og:title" content="Sin Vueltas - Pollo al Spiedo en Godoy Cruz">
+    <meta property="og:description"
+        content="Pollo al spiedo, hamburguesas caseras, pizzas a la parrilla y empanadas. Comida real, abundante y lista para el disfrute.">
+    <meta property="og:image" content="images/POLLO SPIEDO.jpeg">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sin Vueltas - Pollo al Spiedo en Godoy Cruz">
+    <meta name="twitter:description" content="Pollo al spiedo, hamburguesas caseras, pizzas a la parrilla y empanadas.">
+    <meta name="twitter:image" content="images/POLLO SPIEDO.jpeg">
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+        rel="stylesheet" />
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            DEFAULT: '#f48c25', // Orange/Fire
+                            dark: '#e07b1a',
+                        },
+                        dark: {
+                            900: '#1a120b',
+                            800: '#2c2219',
+                            700: '#3d3024',
+                        }
+                    },
+                    fontFamily: {
+                        display: ['Bebas Neue', 'sans-serif'],
+                        body: ['Montserrat', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'wood': "url('https://images.unsplash.com/photo-1588345921523-c2dcdb7f1dcd?q=80&w=2070&auto=format&fit=crop')",
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #1a120b;
+            color: #f3f4f6;
+        }
+
+        .text-shadow {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .wood-bg {
+            background-image: linear-gradient(rgba(26, 18, 11, 0.92), rgba(26, 18, 11, 0.95)), url('https://images.unsplash.com/photo-1588345921523-c2dcdb7f1dcd?q=80&w=2070&auto=format&fit=crop');
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        /* Gallery Lightbox Effect */
+        .gallery-item {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            z-index: 10;
+        }
+    </style>
+
+    <!-- Schema.org LocalBusiness JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "Sin Vueltas",
+        "image": "images/POLLO SPIEDO.jpeg",
+        "url": "https://sinvueltas.vercel.app/",
+        "telephone": "+54 261 263 9623",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Castellani 224",
+            "addressLocality": "Godoy Cruz",
+            "addressRegion": "Mendoza",
+            "postalCode": "5501",
+            "addressCountry": "AR"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": -32.92,
+            "longitude": -68.85
+        },
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+                "opens": "12:00",
+                "closes": "15:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Friday", "Saturday"],
+                "opens": "20:00",
+                "closes": "23:00"
+            }
+        ],
+        "servesCuisine": ["Rotisería", "Comida Argentina", "Comida Rápida"],
+        "priceRange": "$$",
+        "sameAs": [
+            "https://www.instagram.com/sinvueltasalspiedo",
+            "https://www.tiktok.com/@sinvueltasalspiedo"
+        ]
+    }
+    </script>
+</head>
+
+<body class="wood-bg min-h-screen font-body relative">
+
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-md border-b border-dark-700 shadow-lg">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#" class="flex items-center gap-2 group">
+                <img src="images/logo.jpg" alt="Sin Vueltas Logo"
+                    class="h-10 w-10 rounded-full border-2 border-brand object-cover group-hover:scale-105 transition-transform">
+                <span
+                    class="font-display text-2xl tracking-wide text-white group-hover:text-brand transition-colors">SIN
+                    VUELTAS</span>
+            </a>
+
+            <div class="hidden md:flex gap-8">
+                <a href="#menu"
+                    class="font-bold text-sm uppercase tracking-widest hover:text-brand transition-colors">Menú</a>
+                <a href="#ubicacion"
+                    class="font-bold text-sm uppercase tracking-widest hover:text-brand transition-colors">Ubicación</a>
+                <a href="#contacto"
+                    class="font-bold text-sm uppercase tracking-widest hover:text-brand transition-colors">Contacto</a>
+            </div>
+
+            <a href="https://wa.me/5492612639623" target="_blank"
+                class="hidden md:flex bg-brand hover:bg-brand-dark text-dark-900 font-bold py-2 px-6 rounded-full text-sm uppercase tracking-widest transition-transform hover:scale-105 shadow-lg shadow-brand/20">
+                Pedir Ahora
+            </a>
+
+            <!-- Mobile Menu Button (Simple implementation) -->
+            <button class="md:hidden text-white p-2">
+                <span class="material-symbols-outlined text-3xl">menu</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header
+        class="relative min-h-[90vh] md:min-h-[80vh] px-4 flex flex-col items-center justify-center text-center overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-0">
+            <img src="images/POLLO SPIEDO.jpeg" alt="Pollo al Spiedo" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-dark-900 via-dark-900/70 to-dark-900/50"></div>
+        </div>
+
+        <div class="container mx-auto max-w-5xl relative z-10">
+
+            <!-- Open/Closed Indicator -->
+            <div id="status-indicator"
+                class="inline-flex items-center gap-2 px-4 py-2 rounded-full backdrop-blur-md border mb-4 text-xs font-bold uppercase tracking-[0.15em]">
+                <span id="status-dot" class="w-2 h-2 rounded-full animate-pulse"></span>
+                <span id="status-text">Cargando...</span>
+            </div>
+
+            <!-- Promo Badge -->
+            <div
+                class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand/20 border border-brand/30 text-brand font-bold text-xs uppercase tracking-[0.2em] mb-6 backdrop-blur-sm">
+                <span class="material-symbols-outlined text-sm">local_fire_department</span>
+                🔥 Pollo + Papas desde $19.000
+            </div>
+
+            <!-- Logo Image -->
+            <div class="mb-6">
+                <img src="images/logo.jpg" alt="Sin Vueltas"
+                    class="w-32 h-32 md:w-40 md:h-40 mx-auto rounded-full border-4 border-brand shadow-2xl shadow-brand/30 object-cover">
+            </div>
+
+            <h1
+                class="font-display text-6xl md:text-8xl lg:text-9xl text-white leading-none tracking-wide text-shadow mb-4">
+                SIN <span class="text-brand">VUELTAS</span>
+            </h1>
+
+            <p class="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto mb-8 leading-relaxed font-medium">
+                Pollo al spiedo, hamburguesas caseras y pizzas a la parrilla. <br>
+                <span class="text-brand font-bold">Comida real, abundante y sin vueltas.</span>
+            </p>
+
+            <!-- Product Preview Icons -->
+            <div class="flex justify-center gap-4 md:gap-6 mb-10">
+                <div class="flex flex-col items-center gap-1 group cursor-pointer">
+                    <div
+                        class="w-14 h-14 md:w-16 md:h-16 rounded-full overflow-hidden border-2 border-white/20 group-hover:border-brand transition-colors">
+                        <img src="images/POLLO SPIEDO.jpeg" alt="Pollo" class="w-full h-full object-cover">
+                    </div>
+                    <span class="text-[10px] text-gray-400 font-bold uppercase tracking-wider">Pollo</span>
+                </div>
+                <div class="flex flex-col items-center gap-1 group cursor-pointer">
+                    <div
+                        class="w-14 h-14 md:w-16 md:h-16 rounded-full overflow-hidden border-2 border-white/20 group-hover:border-brand transition-colors">
+                        <img src="images/burger.png" alt="Hamburguesa" class="w-full h-full object-cover">
+                    </div>
+                    <span class="text-[10px] text-gray-400 font-bold uppercase tracking-wider">Burger</span>
+                </div>
+                <div class="flex flex-col items-center gap-1 group cursor-pointer">
+                    <div
+                        class="w-14 h-14 md:w-16 md:h-16 rounded-full overflow-hidden border-2 border-white/20 group-hover:border-brand transition-colors">
+                        <img src="images/pizza.jpeg" alt="Pizza" class="w-full h-full object-cover">
+                    </div>
+                    <span class="text-[10px] text-gray-400 font-bold uppercase tracking-wider">Pizza</span>
+                </div>
+                <div class="flex flex-col items-center gap-1 group cursor-pointer">
+                    <div
+                        class="w-14 h-14 md:w-16 md:h-16 rounded-full overflow-hidden border-2 border-white/20 group-hover:border-brand transition-colors">
+                        <img src="images/empanada.jpeg" alt="Empanadas" class="w-full h-full object-cover">
+                    </div>
+                    <span class="text-[10px] text-gray-400 font-bold uppercase tracking-wider">Empanadas</span>
+                </div>
+            </div>
+
+            <!-- CTA Buttons -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+                <a href="#menu"
+                    class="bg-brand hover:bg-brand-dark text-dark-900 font-extrabold py-4 px-10 rounded-xl text-sm uppercase tracking-[0.15em] transition-all hover:-translate-y-1 shadow-xl shadow-brand/30 flex items-center justify-center gap-2">
+                    <span class="material-symbols-outlined">restaurant_menu</span>
+                    Ver Menú
+                </a>
+                <a href="https://wa.me/5492612639623" target="_blank"
+                    class="bg-[#25D366] hover:bg-[#20bd5a] text-white font-extrabold py-4 px-10 rounded-xl text-sm uppercase tracking-[0.15em] transition-all hover:-translate-y-1 shadow-xl shadow-[#25D366]/30 flex items-center justify-center gap-2">
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                        <path
+                            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.008-.57-.008-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                    </svg>
+                    Pedir por WhatsApp
+                </a>
+            </div>
+
+            <!-- Social Proof -->
+            <div class="flex flex-wrap justify-center gap-4 text-xs text-gray-400">
+                <div
+                    class="flex items-center gap-2 bg-white/5 backdrop-blur-sm px-4 py-2 rounded-full border border-white/10">
+                    <span class="material-symbols-outlined text-brand text-sm">location_on</span>
+                    Frente al Club Talleres
+                </div>
+                <a href="https://www.instagram.com/sinvueltasalspiedo" target="_blank"
+                    class="flex items-center gap-2 bg-white/5 backdrop-blur-sm px-4 py-2 rounded-full border border-white/10 hover:border-brand/50 transition-colors">
+                    <span class="material-symbols-outlined text-pink-400 text-sm">photo_camera</span>
+                    +700 seguidores
+                </a>
+                <div
+                    class="flex items-center gap-2 bg-white/5 backdrop-blur-sm px-4 py-2 rounded-full border border-white/10">
+                    <span class="material-symbols-outlined text-green-400 text-sm">payments</span>
+                    Efectivo / Transferencia
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Open/Closed Status Script -->
+    <script>
+        function updateStatus() {
+            const now = new Date();
+            // Argentina timezone offset (UTC-3)
+            const argTime = new Date(now.toLocaleString('en-US', { timeZone: 'America/Argentina/Mendoza' }));
+            const day = argTime.getDay(); // 0=Sun, 1=Mon, ..., 6=Sat
+            const hour = argTime.getHours();
+            const minute = argTime.getMinutes();
+            const currentTime = hour + minute / 60;
+
+            let isOpen = false;
+            let statusMsg = 'Cerrado';
+
+            // Monday = 1 -> Closed
+            if (day === 1) {
+                statusMsg = 'Lunes Cerrado';
+            } else {
+                // Mediédia: Mar-Dom 12-15hs
+                if (currentTime >= 12 && currentTime < 15) {
+                    isOpen = true;
+                    statusMsg = 'Abierto ahora';
+                }
+                // Noche: Vie (5) y Sab (6) 20-23hs
+                if ((day === 5 || day === 6) && currentTime >= 20 && currentTime < 23) {
+                    isOpen = true;
+                    statusMsg = 'Abierto ahora';
+                }
+            }
+
+            const indicator = document.getElementById('status-indicator');
+            const dot = document.getElementById('status-dot');
+            const text = document.getElementById('status-text');
+
+            if (isOpen) {
+                indicator.className = indicator.className.replace(/bg-red-500\/10|border-red-500\/30|bg-gray-500\/10|border-gray-500\/30/g, '');
+                indicator.classList.add('bg-green-500/10', 'border-green-500/30', 'text-green-400');
+                dot.classList.add('bg-green-400');
+                dot.classList.remove('bg-red-400', 'bg-gray-400');
+            } else {
+                indicator.classList.add('bg-red-500/10', 'border-red-500/30', 'text-red-400');
+                indicator.classList.remove('bg-green-500/10', 'border-green-500/30', 'text-green-400');
+                dot.classList.add('bg-red-400');
+                dot.classList.remove('bg-green-400', 'bg-gray-400');
+            }
+            text.textContent = statusMsg;
+        }
+        updateStatus();
+        setInterval(updateStatus, 60000); // Update every minute
+    </script>
+
+    <!-- Menu Layout -->
+    <section id="menu" class="py-16 md:py-24 relative">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <div class="text-center mb-16">
+                <h2 class="font-display text-5xl md:text-6xl text-white mb-4 tracking-wide">Nuestro Menú</h2>
+                <div class="h-1 w-24 bg-brand mx-auto rounded-full"></div>
+            </div>
+
+            <!-- Grid de Categorias -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+
+                <!-- Pollos -->
+                <div
+                    class="bg-dark-800/50 rounded-3xl p-6 md:p-8 border border-white/5 hover:border-brand/30 transition-colors relative group overflow-hidden">
+                    <div
+                        class="absolute top-0 right-0 bg-brand text-dark-900 font-bold text-xs px-3 py-1 rounded-bl-xl uppercase tracking-wider">
+                        Especialidad</div>
+                    <div class="flex items-center gap-4 mb-6">
+                        <span class="material-symbols-outlined text-4xl text-brand">wb_sunny</span>
+                        <h3 class="font-display text-3xl md:text-4xl text-white tracking-wide">Pollos al Spiedo</h3>
+                    </div>
+                    <ul class="space-y-4">
+                        <li class="flex justify-between items-baseline border-b border-white/5 pb-2">
+                            <span class="font-bold text-lg text-white">Pollo Entero con Papas</span>
+                            <span class="font-display text-xl text-brand">$19.000</span>
+                        </li>
+                        <li class="flex justify-between items-baseline border-b border-white/5 pb-2">
+                            <span class="font-bold text-lg text-white">Pollo Solo</span>
+                            <span class="font-display text-xl text-brand">$17.000</span>
+                        </li>
+                        <li class="flex justify-between items-baseline border-b border-white/5 pb-2">
+                            <span class="font-bold text-lg text-white">Medio Pollo</span>
+                            <span class="font-display text-xl text-brand">$9.500</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Minutas / Sandwiches -->
+                <div
+                    class="bg-dark-800/50 rounded-3xl p-6 md:p-8 border border-white/5 hover:border-brand/30 transition-colors">
+                    <div class="flex items-center gap-4 mb-6">
+                        <span class="material-symbols-outlined text-4xl text-brand">lunch_dining</span>
+                        <h3 class="font-display text-3xl md:text-4xl text-white tracking-wide">Minutas</h3>
+                    </div>
+                    <ul class="space-y-4">
+                        <li class="flex justify-between items-baseline border-b border-white/5 pb-2">
+                            <div>
+                                <span class="font-bold text-lg text-white block">Sándwich Milanesa</span>
+                                <span class="text-xs text-gray-400">Completo con lechuga y tomate</span>
+                            </div>
+                            <span class="font-display text-xl text-brand">$6.000</span>
+                        </li>
+                        <li class="flex justify-between items-baseline border-b border-white/5 pb-2">
+                            <div>
+                                <span class="font-bold text-lg text-white block">Sándwich Pollo</span>
+                                <span class="text-xs text-gray-400">En pan ciabatta casero</span>
+                            </div>
+                            <span class="font-display text-xl text-brand">$6.000</span>
+                        </li>
+                        <li class="flex justify-between items-baseline border-b border-white/5 pb-2">
+                            <span class="font-bold text-lg text-white">Sándwich Carne</span>
+                            <span class="font-display text-xl text-brand">$6.000</span>
+                        </li>
+                        <li class="flex justify-between items-baseline border-b border-white/5 pb-2">
+                            <span class="font-bold text-lg text-white">Pancho</span>
+                            <span class="font-display text-xl text-brand">$2.500</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Empanadas -->
+                <div
+                    class="bg-dark-800/50 rounded-3xl p-6 md:p-8 border border-white/5 hover:border-brand/30 transition-colors">
+                    <div class="flex items-center gap-4 mb-6">
+                        <span class="material-symbols-outlined text-4xl text-brand">bakery_dining</span>
+                        <h3 class="font-display text-3xl md:text-4xl text-white tracking-wide">Empanadas</h3>
+                    </div>
+                    <ul class="space-y-4">
+                        <li class="flex justify-between items-baseline border-b border-white/5 pb-2">
+                            <span class="font-bold text-lg text-white">Carne</span>
+                            <span class="font-display text-xl text-brand">$12.000 <span
+                                    class="text-xs text-gray-500 font-sans ml-1">(doc)</span></span>
+                        </li>
+                        <li class="flex justify-between items-baseline border-b border-white/5 pb-2">
+                            <span class="font-bold text-lg text-white">Jamón y Queso / Pollo</span>
+                            <span class="font-display text-xl text-brand">$12.000 <span
+                                    class="text-xs text-gray-500 font-sans ml-1">(doc)</span></span>
+                        </li>
+                        <li class="flex justify-between items-baseline border-b border-white/5 pb-2">
+                            <span class="font-bold text-lg text-white">Media Docena</span>
+                            <span class="font-display text-xl text-brand">$6.500</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Pizzas -->
+                <div
+                    class="bg-dark-800/50 rounded-3xl p-6 md:p-8 border border-white/5 hover:border-brand/30 transition-colors">
+                    <div class="flex items-center gap-4 mb-6">
+                        <span class="material-symbols-outlined text-4xl text-brand">local_pizza</span>
+                        <h3 class="font-display text-3xl md:text-4xl text-white tracking-wide">Pizzas a la Parrilla</h3>
+                    </div>
+                    <ul class="space-y-4">
+                        <li class="flex justify-between items-baseline border-b border-white/5 pb-2">
+                            <span class="font-bold text-lg text-white">Muzarella</span>
+                            <span class="font-display text-xl text-brand">$11.000</span>
+                        </li>
+                        <li class="flex justify-between items-baseline border-b border-white/5 pb-2">
+                            <span class="font-bold text-lg text-white">Especial</span>
+                            <span class="font-display text-xl text-brand">$13.000</span>
+                        </li>
+                        <li class="flex justify-between items-baseline border-b border-white/5 pb-2">
+                            <span class="font-bold text-lg text-white">Calabresa</span>
+                            <span class="font-display text-xl text-brand">$13.000</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Hamburguesas -->
+                <div
+                    class="md:col-span-2 bg-dark-800/50 rounded-3xl p-6 md:p-8 border border-white/5 hover:border-brand/30 transition-colors">
+                    <div class="flex items-center gap-4 mb-6">
+                        <span class="material-symbols-outlined text-4xl text-brand">lunch_dining</span>
+                        <div>
+                            <h3 class="font-display text-3xl md:text-4xl text-white tracking-wide">Hamburguesas Caseras
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="flex justify-between items-baseline border-b border-white/5 pb-2">
+                            <div>
+                                <span class="font-bold text-lg text-white block">Simple Común</span>
+                                <span class="text-xs text-gray-400">Carne 180g, lechuga, tomate</span>
+                            </div>
+                            <span class="font-display text-xl text-brand">$8.000</span>
+                        </div>
+                        <div class="flex justify-between items-baseline border-b border-white/5 pb-2">
+                            <div>
+                                <span class="font-bold text-lg text-white block">Simple Completa</span>
+                                <span class="text-xs text-gray-400">Con jamón, queso, huevo</span>
+                            </div>
+                            <span class="font-display text-xl text-brand">$10.000</span>
+                        </div>
+                        <div class="flex justify-between items-baseline border-b border-white/5 pb-2">
+                            <div>
+                                <span class="font-bold text-lg text-white block">Doble Común</span>
+                                <span class="text-xs text-gray-400">Doble carne, cheddar</span>
+                            </div>
+                            <span class="font-display text-xl text-brand">$10.000</span>
+                        </div>
+                        <div class="flex justify-between items-baseline border-b border-white/5 pb-2">
+                            <div>
+                                <span class="font-bold text-lg text-white block">Doble Completa</span>
+                                <span class="text-xs text-gray-400">La más potente y cargada</span>
+                            </div>
+                            <span class="font-display text-xl text-brand">$12.000</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Info & Ubicación -->
+    <section id="ubicacion" class="py-16 bg-dark-900 relative">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+
+                <!-- Contacto -->
+                <div
+                    class="flex flex-col gap-4 items-center md:items-start p-6 rounded-2xl bg-white/5 border border-white/5">
+                    <span class="material-symbols-outlined text-4xl text-brand">call</span>
+                    <h3 class="font-display text-2xl text-white tracking-wide">Pedidos</h3>
+                    <p class="text-gray-400">Hacé tu pedido por WhatsApp y retirá sin espera.</p>
+                    <a href="tel:2612639623"
+                        class="text-xl font-bold text-white hover:text-brand transition-colors">261-263-9623</a>
+                    <a href="https://wa.me/5492612639623"
+                        class="text-brand font-bold uppercase text-xs tracking-widest mt-2 flex items-center gap-1">
+                        Enviar mensaje <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </a>
+                </div>
+
+                <!-- Direccion -->
+                <div
+                    class="flex flex-col gap-4 items-center md:items-start p-6 rounded-2xl bg-white/5 border border-white/5">
+                    <span class="material-symbols-outlined text-4xl text-brand">storefront</span>
+                    <h3 class="font-display text-2xl text-white tracking-wide">Ubicación</h3>
+                    <p class="text-gray-400">Frente al Club Talleres.</p>
+                    <p class="text-xl font-bold text-white">Castellani 224</p>
+                    <p class="text-sm text-gray-400 uppercase tracking-wider">Godoy Cruz, Mendoza</p>
+                </div>
+
+                <!-- Horarios -->
+                <div
+                    class="flex flex-col gap-4 items-center md:items-start p-6 rounded-2xl bg-white/5 border border-white/5">
+                    <span class="material-symbols-outlined text-4xl text-brand">schedule</span>
+                    <h3 class="font-display text-2xl text-white tracking-wide">Horarios</h3>
+                    <div class="space-y-1">
+                        <div class="flex justify-between w-full gap-4 text-sm">
+                            <span class="text-gray-400 font-bold">Mar - Dom (Mediodía):</span>
+                            <span class="text-white">12:00 - 15:00</span>
+                        </div>
+                        <div class="flex justify-between w-full gap-4 text-sm">
+                            <span class="text-gray-400 font-bold">Vie - Sáb (Noche):</span>
+                            <span class="text-white">20:00 - 23:00</span>
+                        </div>
+                        <div class="mt-2 text-xs text-brand uppercase tracking-widest font-bold">Lunes Cerrado</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Gallery Section -->
+    <section id="galeria" class="py-16 md:py-24 relative">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <div class="text-center mb-12">
+                <h2 class="font-display text-5xl md:text-6xl text-white mb-4 tracking-wide">Mirá lo que hay</h2>
+                <div class="h-1 w-24 bg-brand mx-auto rounded-full"></div>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <!-- Pollo Spiedo -->
+                <div
+                    class="gallery-item relative aspect-square rounded-2xl overflow-hidden cursor-pointer col-span-2 row-span-2">
+                    <img src="images/POLLO SPIEDO.jpeg" alt="Pollo al Spiedo dorado y jugoso"
+                        class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-4 left-4">
+                        <span class="font-display text-2xl text-white">Pollo al Spiedo</span>
+                        <span class="block text-brand text-xs uppercase tracking-widest font-bold">Especialidad</span>
+                    </div>
+                </div>
+
+                <!-- Burger -->
+                <div class="gallery-item relative aspect-square rounded-2xl overflow-hidden cursor-pointer">
+                    <img src="images/burger.png" alt="Hamburguesa casera" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                    <span class="absolute bottom-3 left-3 font-display text-lg text-white">Hamburguesa</span>
+                </div>
+
+                <!-- Burger 2 -->
+                <div class="gallery-item relative aspect-square rounded-2xl overflow-hidden cursor-pointer">
+                    <img src="images/burger2.jpeg" alt="Hamburguesa doble" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                    <span class="absolute bottom-3 left-3 font-display text-lg text-white">Doble Carne</span>
+                </div>
+
+                <!-- Empanada -->
+                <div class="gallery-item relative aspect-square rounded-2xl overflow-hidden cursor-pointer">
+                    <img src="images/empanada.jpeg" alt="Empanadas criollas" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                    <span class="absolute bottom-3 left-3 font-display text-lg text-white">Empanadas</span>
+                </div>
+
+                <!-- Pizza -->
+                <div class="gallery-item relative aspect-square rounded-2xl overflow-hidden cursor-pointer">
+                    <img src="images/pizza.jpeg" alt="Pizza a la parrilla" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                    <span class="absolute bottom-3 left-3 font-display text-lg text-white">Pizza</span>
+                </div>
+
+                <!-- Sanguche -->
+                <div class="gallery-item relative aspect-square rounded-2xl overflow-hidden cursor-pointer">
+                    <img src="images/sanguche.jpeg" alt="Sándwich de ciabatta" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                    <span class="absolute bottom-3 left-3 font-display text-lg text-white">Sándwich</span>
+                </div>
+
+                <!-- Local (Storefront) -->
+                <div
+                    class="gallery-item relative aspect-square rounded-2xl overflow-hidden cursor-pointer md:col-span-2">
+                    <img src="images/local.jpeg" alt="Nuestro local en Godoy Cruz" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-4 left-4">
+                        <span class="font-display text-2xl text-white">Nuestro Local</span>
+                        <span class="block text-gray-300 text-xs">Castellani 224, Godoy Cruz</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Menu Image Link -->
+            <div class="mt-12 text-center">
+                <a href="images/menu_source.jpg" target="_blank"
+                    class="inline-flex items-center gap-2 bg-brand/10 hover:bg-brand/20 border border-brand/30 text-brand font-bold py-3 px-8 rounded-xl transition-colors">
+                    <span class="material-symbols-outlined">menu_book</span>
+                    Ver Carta Completa (Imagen)
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-8 bg-black/50 border-t border-white/10 text-center">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-gray-500 text-sm">© 2026 Sin Vueltas. Todos los derechos reservados.</p>
+            <div class="flex gap-4">
+                <a href="https://www.instagram.com/sinvueltasalspiedo" target="_blank"
+                    class="text-gray-400 hover:text-brand transition-colors">
+                    <span class="material-symbols-outlined">photo_camera</span>
+                    <!-- Using generic icon for IG if social icons not loaded -->
+                </a>
+                <a href="https://www.tiktok.com/@sinvueltasalspiedo" target="_blank"
+                    class="text-gray-400 hover:text-brand transition-colors">
+                    <span class="material-symbols-outlined">movie</span> <!-- Using generic icon for TikTok -->
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/5492612639623" target="_blank"
+        class="fixed bottom-6 right-6 z-50 bg-[#25D366] hover:bg-[#20bd5a] text-white p-4 rounded-full shadow-2xl transition-all hover:scale-110 hover:rotate-3 group flex items-center justify-center">
+        <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.008-.57-.008-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+        </svg>
+    </a>
+
+</body>
+
+</html>
