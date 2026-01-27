@@ -4,7 +4,7 @@ Landing page para **Sin Vueltas**, rotisería y comida casera en Godoy Cruz, Men
 
 ## Sobre el negocio
 
-- **Especialidad:** Pollo al spiedo, hamburguesas caseras, pizzas a la parrilla, empanadas
+- **Especialidad:** Pollo al spiedo, hamburguesas caseras, pizzas, empanadas
 - **Ubicación:** Castellani 224, Godoy Cruz (frente al Club Talleres)
 - **Horarios:** Mar-Dom 12-15hs | Vie-Sáb 20-23hs | Lunes cerrado
 - **Contacto:** 261-263-9623
