@@ -125,7 +125,7 @@
             },
             {
                 "@type": "OpeningHoursSpecification",
-                "dayOfWeek": ["Friday", "Saturday"],
+                "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
                 "opens": "20:00",
                 "closes": "23:00"
             }
@@ -309,13 +309,13 @@
             if (day === 1) {
                 statusMsg = 'Lunes Cerrado';
             } else {
-                // Mediédia: Mar-Dom 12-15hs
+                // Mediodía: Mar-Dom 12-15hs
                 if (currentTime >= 12 && currentTime < 15) {
                     isOpen = true;
                     statusMsg = 'Abierto ahora';
                 }
-                // Noche: Vie (5) y Sab (6) 20-23hs
-                if ((day === 5 || day === 6) && currentTime >= 20 && currentTime < 23) {
+                // Noche: Mar-Dom 20-23hs
+                if (currentTime >= 20 && currentTime < 23) {
                     isOpen = true;
                     statusMsg = 'Abierto ahora';
                 }
@@ -558,7 +558,7 @@
                             <span class="text-white">12:00 - 15:00</span>
                         </div>
                         <div class="flex justify-between w-full gap-4 text-sm">
-                            <span class="text-gray-400 font-bold">Vie - Sáb (Noche):</span>
+                            <span class="text-gray-400 font-bold">Mar - Dom (Noche):</span>
                             <span class="text-white">20:00 - 23:00</span>
                         </div>
                         <div class="mt-2 text-xs text-brand uppercase tracking-widest font-bold">Lunes Cerrado</div>
